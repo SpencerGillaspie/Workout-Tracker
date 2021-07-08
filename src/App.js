@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import WorkoutForm from "./WorkoutForm.js"
+import Workout from "./Workout.js"
+import React from "react"
 
 function App() {
+  const [workoutArray, setWorkoutArray] = React.useState([]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Workout Tracker</h1>
+      <WorkoutForm onSubmitFunc={(object) => {
+        object.id = workoutArray.length;
+        setWorkoutArray(arr => [...arr, object]);
+      }} />
+
+      {
+        workoutArray.map(workout => <Workout key={workout.id} workout={workout} />)
+      }
     </div>
   );
 }
