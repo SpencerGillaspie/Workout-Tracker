@@ -1,14 +1,21 @@
 import { useState, useRef, useEffect } from "react"
 
 // Takes an onSubmitFunc as props
-const WorkoutForm = ({ onSubmitFunc }) => {
-    const [exercise, setExercise] = useState({
+const WorkoutForm = ({ onSubmitFunc, oldWorkoutObject }) => {
+    var initialObject = {
         id: -1,
         name: "",
         numberOfSets: 0,
         numberOfReps: 0,
         weight: 0
-    });
+    }
+
+    // If this is being called to edit an exercise
+    if (oldWorkoutObject){
+        initialObject = oldWorkoutObject;
+    }
+
+    const [exercise, setExercise] = useState(initialObject);
 
     const isInitialMount = useRef(true);
 
@@ -28,6 +35,7 @@ const WorkoutForm = ({ onSubmitFunc }) => {
     return (
         <form onSubmit={(event) => {
             setExercise({
+                id: exercise.id,
                 name: event.target[0].value,
                 numberOfSets: event.target[1].value,
                 numberOfReps: event.target[2].value,
@@ -38,19 +46,19 @@ const WorkoutForm = ({ onSubmitFunc }) => {
         }}>
             <label>
                 Exercise Name {'\n'}
-                <input type="text" />
+                <input type="text" defaultValue={exercise.name}/>
             </label>
             <label>
                 Number of sets {'\n'}
-                <input type="text" />
+                <input type="text" defaultValue={exercise.numberOfSets}/>
             </label>
             <label>
                 Number of reps {'\n'}
-                <input type="text" />
+                <input type="text" defaultValue={exercise.numberOfReps}/>
             </label>
             <label>
                 Weight {'\n'}
-                <input type="text" />
+                <input type="text" defaultValue={exercise.weight} />
             </label>
             <input type="submit" />
         </form>

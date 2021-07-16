@@ -22,22 +22,28 @@ const App = () => {
     }));
   }
 
+  // Edit an exercise
+  const editExercise = (workoutObject) => {
+    var newArray = [...workoutArray];
+    newArray[workoutObject.id] = workoutObject;
+    setWorkoutArray(newArray);
+  }
+
   return (
     <div className="App">
       <h1>Workout Tracker</h1>
       {
-        workoutArray.map(workout => <Workout key={workout.id} workout={workout} onDelete={deleteExercise}/>)
+        workoutArray.map(workout => <Workout key={workout.id} workout={workout} onDelete={deleteExercise} onEdit={editExercise}/>)
       }
 
       {
-        showForm ? presentForm() : null
+        showForm ? presentForm() : 
+        <button onClick={() => {
+          setShowForm(true);
+        }}>
+          Press here to add an exercise
+        </button>
       }
-
-      <button onClick={() => {
-        setShowForm(true);
-      }}>
-        Press here to add an exercise
-      </button>
     </div>
   );
 }
