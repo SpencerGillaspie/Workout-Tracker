@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
-import WorkoutForm from "./WorkoutForm";
+import WorkoutForm from "./WorkoutForm"
+import "./Styles.css"
 
 // Takes a Workout Object and onDelete function as props
 const Workout = ({workout, onDelete, onEdit}) => {
@@ -16,23 +17,29 @@ const Workout = ({workout, onDelete, onEdit}) => {
 
     // Show the exercise object and the appropriate buttons to modify the exercise object
     const showWorkout = () => {
-        return (<div>
-            <p>
-                Workout Name: {workout.name}{'\n'}
-                Number of sets: {workout.numberOfSets}{'\n'}
-                Number of reps per set: {workout.numberOfReps}{'\n'}
-                Weight used: {workout.weight} lbs.{'\n'}
+        return (
+        <div className="exercise">
+            <p style={{display: "inline-block"}}>
+                Workout Name: {workout.name}<br />
+                Number of sets: {workout.numberOfSets}<br />
+                Number of reps per set: {workout.numberOfReps}<br />
+                Weight used: {workout.weight} lbs.<br />
             </p>
 
-            <button onClick={() => {
-                setShouldDelete(true);
-            }}>Press here to delete an exercise
+            <div style={{display: "inline-block"}}>
+                <button className="button" onClick={() => {
+                    setShouldDelete(true);
+                }}>Delete
 
-            </button>
+                </button>
 
-            <button onClick={() => setShouldShowForm(true)}>
-                Press here to edit an exercise
-            </button>
+                <br />
+
+                <button className="button" onClick={() => setShouldShowForm(true)}>
+                Edit
+                </button>
+            </div>
+            
         </div>)
     }
 

@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react"
+import "./Styles.css"
 
 // Takes an onSubmitFunc as props
 const WorkoutForm = ({ onSubmitFunc, oldWorkoutObject }) => {
@@ -33,7 +34,7 @@ const WorkoutForm = ({ onSubmitFunc, oldWorkoutObject }) => {
     }, [exercise, onSubmitFunc]);
 
     return (
-        <form onSubmit={(event) => {
+        <form className="exercise" onSubmit={(event) => {
             setExercise({
                 id: exercise.id,
                 name: event.target[0].value,
@@ -44,23 +45,29 @@ const WorkoutForm = ({ onSubmitFunc, oldWorkoutObject }) => {
 
             event.preventDefault(); // To stop page from refreshing on submit
         }}>
-            <label>
-                Exercise Name {'\n'}
-                <input type="text" defaultValue={exercise.name}/>
-            </label>
-            <label>
-                Number of sets {'\n'}
-                <input type="text" defaultValue={exercise.numberOfSets}/>
-            </label>
-            <label>
-                Number of reps {'\n'}
-                <input type="text" defaultValue={exercise.numberOfReps}/>
-            </label>
-            <label>
-                Weight {'\n'}
-                <input type="text" defaultValue={exercise.weight} />
-            </label>
-            <input type="submit" />
+            <div>
+                <label>
+                    Exercise Name: 
+                    <input type="text" defaultValue={exercise.name}/>
+                </label>
+                <br />
+                <label>
+                    Number of Sets: 
+                    <input type="text" defaultValue={exercise.numberOfSets}/>
+                </label>
+                <br />
+                <label>
+                    Number of Reps: 
+                    <input type="text" defaultValue={exercise.numberOfReps}/>
+                </label>
+                <br />
+                <label>
+                    Weight: 
+                    <input type="text" defaultValue={exercise.weight} />
+                </label>
+            </div>
+
+            <input className="button" type="submit" />
         </form>
     );
 }

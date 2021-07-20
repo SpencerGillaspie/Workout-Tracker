@@ -1,6 +1,7 @@
 import WorkoutForm from "./WorkoutForm.js"
 import Workout from "./Workout.js"
 import { useState } from "react"
+import "./Styles.css"
 
 const App = () => {
   const [workoutArray, setWorkoutArray] = useState([]);
@@ -33,15 +34,15 @@ const App = () => {
     <div className="App">
       <h1>Workout Tracker</h1>
       {
-        workoutArray.map(workout => <Workout key={workout.id} workout={workout} onDelete={deleteExercise} onEdit={editExercise}/>)
+        workoutArray.map(workout => <Workout className="exercise" key={workout.id} workout={workout} onDelete={deleteExercise} onEdit={editExercise}/>)
       }
 
       {
         showForm ? presentForm() : 
-        <button onClick={() => {
+        <button className="button" onClick={() => {
           setShowForm(true);
         }}>
-          Press here to add an exercise
+          Add an Exercise
         </button>
       }
     </div>
