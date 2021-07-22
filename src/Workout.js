@@ -19,11 +19,11 @@ const Workout = ({workout, onDelete, onEdit}) => {
     const showWorkout = () => {
         return (
         <div className="exercise">
-            <p style={{display: "inline-block"}}>
-                Workout Name: {workout.name}<br />
-                Number of sets: {workout.numberOfSets}<br />
-                Number of reps per set: {workout.numberOfReps}<br />
-                Weight used: {workout.weight} lbs.<br />
+            <p style={{display: "inline-block", fontFamily: "Helvetica"}}>
+                Workout Name: <text className="user_data">{workout.name}</text><br />
+                Number of Sets: <text className="user_data">{workout.numberOfSets}</text><br />
+                Number of Reps: <text className="user_data">{workout.numberOfReps}</text><br />
+                Weight: <text className="user_data">{workout.weight} lbs.</text><br />
             </p>
 
             <div style={{display: "inline-block"}}>

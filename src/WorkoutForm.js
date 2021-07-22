@@ -34,7 +34,7 @@ const WorkoutForm = ({ onSubmitFunc, oldWorkoutObject }) => {
     }, [exercise, onSubmitFunc]);
 
     return (
-        <form className="exercise" onSubmit={(event) => {
+        <form style={{marginLeft: "auto", marginRight: "auto"}} className="exercise" onSubmit={(event) => {
             setExercise({
                 id: exercise.id,
                 name: event.target[0].value,
@@ -48,22 +48,23 @@ const WorkoutForm = ({ onSubmitFunc, oldWorkoutObject }) => {
             <div>
                 <label>
                     Exercise Name: 
-                    <input type="text" defaultValue={exercise.name}/>
+                    <input className="input" type="text" defaultValue={exercise.name}/>
                 </label>
                 <br />
                 <label>
                     Number of Sets: 
-                    <input type="text" defaultValue={exercise.numberOfSets}/>
+                    <input className="input" type="text" defaultValue={exercise.numberOfSets}/>
                 </label>
                 <br />
                 <label>
                     Number of Reps: 
-                    <input type="text" defaultValue={exercise.numberOfReps}/>
+                    <input className="input" type="text" defaultValue={exercise.numberOfReps}/>
                 </label>
                 <br />
                 <label>
                     Weight: 
-                    <input type="text" defaultValue={exercise.weight} />
+                    <input className="input" type="text" defaultValue={exercise.weight} />
+                    lbs.
                 </label>
             </div>
 

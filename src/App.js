@@ -32,14 +32,15 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Workout Tracker</h1>
+      <h1 style={{fontFamily: "Helvetica", textAlign: "center"}}>Workout Tracker</h1>
+      <br />
       {
         workoutArray.map(workout => <Workout className="exercise" key={workout.id} workout={workout} onDelete={deleteExercise} onEdit={editExercise}/>)
       }
 
       {
         showForm ? presentForm() : 
-        <button className="button" onClick={() => {
+        <button style={{display: "block", margin: "auto auto"}}className="button" onClick={() => {
           setShowForm(true);
         }}>
           Add an Exercise

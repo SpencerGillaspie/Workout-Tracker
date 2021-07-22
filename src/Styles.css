@@ -2,10 +2,10 @@
     width: 75px;
     border: 1.5px solid black;
     padding: 5px;
-    margin: 2px;
+    margin: 2px 2px;
     border-radius: 25px;
     color: white;
-    font-family: "Monaco";
+    font-family: "Helvetica";
     font-size: medium;
     background-color: rgb(13, 111, 172);
     
@@ -15,17 +15,23 @@
     border: 1.5px solid black;
     border-radius: 18px;
     padding: 5px;
-    margin: 2px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: auto;
+    margin-right: auto;
     width: 400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: lightgray;
 }
 
-.form {
-    border: 1.5px solid black;
-    border-radius: 18px;
-    padding: 5px;
-    margin: 2px;
-    width: 400px;
+.input {
+    padding: 6px;
+    margin: 8px 8px; /* vertical, horizontal */
+    border: 2px solid black; /* size, style, color */
+}
+
+.user_data {
+    font-weight: bold;
 }
