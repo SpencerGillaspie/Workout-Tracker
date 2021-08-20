@@ -1,3 +1,18 @@
+# Workout-Tracker
+
+## Initial Screen
+![InitialScreen](https://user-images.githubusercontent.com/55415019/130263492-8267f930-0734-4f45-a82b-5967d55ba0e8.png)
+
+## Add an Exercise
+![AddExercise](https://user-images.githubusercontent.com/55415019/130263543-caf206e6-abb6-47f3-909e-6455f44e84cc.png)
+
+## List of Exercises
+![Exercises](https://user-images.githubusercontent.com/55415019/130263643-f3e8abe8-89a3-4174-b926-73f64dfd9ec8.png)
+
+## Edit an Exercise
+![EditExercise](https://user-images.githubusercontent.com/55415019/130263653-a4a458dd-7724-4a42-a92e-e80752f5c295.png)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
